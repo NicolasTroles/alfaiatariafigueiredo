@@ -1,13 +1,14 @@
-import { BarraContatoMobile } from '@/components/Acoes';
+import { BarraContatoMobile, BotaoWhatsAppFlutuante } from '@/components/Acoes';
 import { Contato } from '@/components/Contato';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import {
-  Depoimentos,
+  Avaliacoes,
   Galeria,
   Oficio,
   Processo,
+  Reparos,
   Servicos,
 } from '@/components/Secoes';
 
@@ -19,15 +20,17 @@ export default function Home() {
         <Hero />
         <Oficio />
         <Servicos />
+        <Reparos />
         <Galeria />
         <Processo />
-        <Depoimentos />
+        <Avaliacoes />
         <Contato />
       </main>
       <Footer />
       {/* Espaço reservado para a barra fixa não cobrir o rodapé no mobile. */}
       <div className="h-20 md:hidden" aria-hidden="true" />
       <BarraContatoMobile />
+      <BotaoWhatsAppFlutuante />
     </>
   );
 }

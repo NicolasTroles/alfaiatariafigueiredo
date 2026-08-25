@@ -8,6 +8,7 @@ import { whatsappUrl } from '@/config/site.config';
 const LINKS = [
   { href: '#oficio', label: 'O ofício' },
   { href: '#servicos', label: 'Serviços' },
+  { href: '#reparos', label: 'Reparos' },
   { href: '#galeria', label: 'Trabalhos' },
   { href: '#processo', label: 'Processo' },
   { href: '#contato', label: 'Contato' },

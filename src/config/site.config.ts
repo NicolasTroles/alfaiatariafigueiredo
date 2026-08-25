@@ -30,8 +30,7 @@ export const site = {
     estado: 'PR',
     cep: '83320-560',
     /** Usado no embed do mapa e no botão "traçar rota". */
-    queryMaps:
-      'Alfaiataria Figueiredo, R. Genoveva Forlepa Kopka, 219, Pineville, Pinhais - PR',
+    queryMaps: 'Alfaiataria Figueiredo, R. Genoveva Forlepa Kopka, 219, Pineville, Pinhais - PR',
   },
 
   /** CONFIRMAR horários com a Figueiredo — não estavam publicados no site de origem. */
@@ -78,7 +77,23 @@ export const servicos = [
     icone: 'scissors' as const,
     titulo: 'Reformas em geral',
     descricao:
-      'Ajustes de barra, cintura, ombros e mangas. Aquela peça que nunca serviu direito pode voltar a vestir bem.',
+      'Ajustes de barra, cintura, ombros e mangas, inclusive aberturas, sem deixar vestígio de reforma. A peça volta a vestir bem como se tivesse saído assim de fábrica.',
+  },
+];
+
+/** Especialidade: reparo e ajuste (não confecção) de fardas, jalecos e ternos. */
+export const reparos = [
+  {
+    icone: 'shield' as const,
+    titulo: 'Fardas militares e de bombeiros',
+    descricao:
+      'Ajuste de cintura, bainha, forro e reforço nos pontos de maior desgaste, sem alterar a identidade da farda.',
+  },
+  {
+    icone: 'stethoscope' as const,
+    titulo: 'Jalecos e roupas hospitalares',
+    descricao:
+      'Reparo de costuras, botões, punhos e barras, mantendo o caimento certo para o uso do dia a dia.',
   },
 ];
 
@@ -110,26 +125,16 @@ export const processo = [
 ];
 
 /**
- * SUBSTITUIR pelos depoimentos reais do Google Maps.
- * Não publique com estes textos de exemplo.
+ * Nota e link do Google atualizados manualmente (conferido em 25/08/2026).
+ * Para importar nota/total automaticamente é preciso a Places API (Place
+ * Details) do Google Cloud, com API key e faturamento habilitados — sem
+ * isso o valor tem que ser atualizado à mão de vez em quando aqui.
  */
-export const depoimentos = [
-  {
-    texto: 'EXEMPLO — substituir por avaliação real do Google.',
-    autor: 'Nome do cliente',
-    contexto: 'Uniforme da equipe',
-  },
-  {
-    texto: 'EXEMPLO — substituir por avaliação real do Google.',
-    autor: 'Nome do cliente',
-    contexto: 'Ajuste de terno',
-  },
-  {
-    texto: 'EXEMPLO — substituir por avaliação real do Google.',
-    autor: 'Nome do cliente',
-    contexto: 'Traje social sob medida',
-  },
-];
+export const googleAvaliacoes = {
+  nota: 4.9,
+  total: 67,
+  url: 'https://www.google.com/search?q=alfaitaria+figueiredo&oq=alfaitaria+f&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyCwgCEAAYChgLGIAEMgsIAxAAGAoYCxiABDILCAQQABgKGAsYgAQyCwgFEAAYChgLGIAEMgsIBhAAGAoYCxiABDILCAcQABgKGAsYgAQyCwgIEAAYChgLGIAEMgsICRAAGAoYCxiABNIBCDQyMTdqMGo3qAIAsAIA&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x94dcefa181b699d5:0x8921e95802356875,1,,,,',
+};
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
   site.whatsappMensagem,

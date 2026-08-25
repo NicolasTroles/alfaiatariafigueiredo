@@ -15,7 +15,7 @@ reais da loja assim que possível**, o crop e o layout continuam os mesmos.
 | 6   | `galeria-medidas.jpg` ✅   | Galeria                        | Quadrada      | Site de origem: detalhe da tirada de medidas                            |
 | 7   | `galeria-uniformes.jpg` ✅ | Galeria                        | Larga 16:10   | Site de origem: uniformes em lote                                       |
 | 8   | `galeria-social.jpg` ✅    | Galeria                        | Larga 16:10   | Site de origem: trajes sociais                                          |
-| 9   | `faixa-loja.jpg` ✅        | Faixa parallax                 | Larga, 16:9+  | Site de origem: interior da loja                                        |
+| 9   | `faixa-loja.png` ✅        | Faixa parallax                 | Larga, 16:9+  | Site de origem: interior da loja                                        |
 
 ## Logo e favicon
 

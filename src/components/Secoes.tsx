@@ -1,7 +1,7 @@
 'use client';
 
-import { Briefcase, Scissors, Shirt, Quote } from 'lucide-react';
-import { depoimentos, processo, servicos, site } from '@/config/site.config';
+import { Briefcase, Scissors, Shield, Shirt, Star, Stethoscope } from 'lucide-react';
+import { googleAvaliacoes, processo, reparos, servicos, site } from '@/config/site.config';
 import { useParallax } from '@/lib/useParallax';
 import { SectionDivider, SuitSilhouette } from './Brand';
 import { Foto } from './Foto';
@@ -12,6 +12,8 @@ const ICONES = {
   briefcase: Briefcase,
   shirt: Shirt,
   scissors: Scissors,
+  shield: Shield,
+  stethoscope: Stethoscope,
 } as const;
 
 /**
@@ -35,9 +37,7 @@ function TituloSecao({
   const claro = tom === 'claro';
   return (
     <div className={centro ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
-      <p
-        className={`brand-caps text-[10px] ${claro ? 'text-platinumDeep' : 'text-platinum'}`}
-      >
+      <p className={`brand-caps text-[10px] ${claro ? 'text-platinumDeep' : 'text-platinum'}`}>
         {etiqueta}
       </p>
       <h2
@@ -65,10 +65,7 @@ export function Oficio() {
   const marca = useParallax<HTMLDivElement>(0.12);
 
   return (
-    <section
-      id="oficio"
-      className="relative overflow-hidden bg-sand py-28 text-cocoa sm:py-36"
-    >
+    <section id="oficio" className="relative overflow-hidden bg-sand py-28 text-cocoa sm:py-36">
       {/* Marca d'água da silhueta da fachada, movendo devagar ao fundo. */}
       <div
         ref={marca.ref}
@@ -89,14 +86,12 @@ export function Oficio() {
             />
             <div className="mt-10 space-y-6 border-l-2 border-platinum/50 pl-7">
               <p className="max-w-prose leading-relaxed text-cocoaSoft">
-                Em Pineville, {site.nome} mantém o ofício de alfaiataria do
-                jeito que ele foi ensinado: medida tirada à mão, corte
-                exclusivo e provas até o caimento ficar exato.
+                Em Pineville, {site.nome} mantém o ofício de alfaiataria do jeito que ele foi
+                ensinado: medida tirada à mão, corte exclusivo e provas até o caimento ficar exato.
               </p>
               <p className="max-w-prose leading-relaxed text-cocoaSoft">
-                É um trabalho lento por escolha. O resultado é uma peça que
-                acompanha você por anos, em vez de uma que serve mais ou menos
-                por uma temporada.
+                É um trabalho lento por escolha. O resultado é uma peça que acompanha você por anos,
+                em vez de uma que serve mais ou menos por uma temporada.
               </p>
             </div>
           </Reveal>
@@ -107,7 +102,7 @@ export function Oficio() {
             <div className="grid grid-cols-2 gap-4">
               <Foto
                 // FOTO 2 — tirada de medidas
-                src="/fotos/oficio-1.jpg"
+                src="/fotos/oficio-1.png"
                 guia="Equipe da Figueiredo tirando medidas de um cliente."
                 alt="Alfaiate da Figueiredo tirando medidas de um cliente com fita métrica, no ateliê"
                 aspect="alto"
@@ -135,17 +130,10 @@ export function Oficio() {
 /** Seção 3 — CLARA. Serviços. */
 export function Servicos() {
   return (
-    <section
-      id="servicos"
-      className="border-t border-sandLine bg-sand py-28 text-cocoa sm:py-36"
-    >
+    <section id="servicos" className="border-t border-sandLine bg-sand py-28 text-cocoa sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <TituloSecao
-            etiqueta="Serviços"
-            titulo="O que sai da alfaiataria."
-            centro
-          />
+          <TituloSecao etiqueta="Serviços" titulo="O que sai da alfaiataria." centro />
         </Reveal>
 
         <div className="mt-16 grid gap-px border border-sandLine bg-sandLine sm:grid-cols-2">
@@ -159,9 +147,7 @@ export function Servicos() {
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
-                  <h3 className="mt-7 font-display text-2xl text-cocoa">
-                    {servico.titulo}
-                  </h3>
+                  <h3 className="mt-7 font-display text-2xl text-cocoa">{servico.titulo}</h3>
                   <p className="mt-4 max-w-prose leading-relaxed text-cocoaSoft">
                     {servico.descricao}
                   </p>
@@ -175,7 +161,66 @@ export function Servicos() {
   );
 }
 
-/** Seção 4 — ESCURA. Galeria: o fundo escuro faz as fotos saltarem. */
+/** Seção 4 — CLARA. Especialidade: reparo e ajuste (fardas, jalecos, ternos). */
+export function Reparos() {
+  return (
+    <section id="reparos" className="border-t border-sandLine bg-sand py-28 text-cocoa sm:py-36">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            {/* Foto à esquerda aqui — em Oficio ela vai à direita. Alterna o
+                ritmo entre as seções claras da página. */}
+            <Foto
+              // FOTO 10 — mesa de reparo
+              src="/fotos/reparos.jpg"
+              guia="Foto ilustrativa do reparo: uma farda militar, de bombeiro ou um jaleco sobre a mesa de trabalho, com agulha, linha e tesoura ao lado. Pode ser um close das mãos costurando a peça — o foco é mostrar reparo, não confecção."
+              alt="Farda sobre a mesa de trabalho da alfaiataria, em processo de reparo"
+              aspect="alto"
+              tom="claro"
+              sizes="(max-width: 1024px) 64vw, 40vw"
+              className="max-w-[80%] rounded-2xl shadow-[0_28px_56px_-20px_rgba(18,16,14,0.4)]"
+            />
+          </Reveal>
+
+          <Reveal delay={120}>
+            <TituloSecao
+              etiqueta="Reparo e ajuste"
+              titulo="Não precisa ser novo. Precisa vestir certo."
+              descricao="Farda militar, farda de bombeiro, jaleco hospitalar ou terno do dia a dia: o reparo é feito aqui, com a mesma atenção de uma peça sob medida."
+            />
+
+            <div className="mt-10 space-y-7">
+              {reparos.map((item) => {
+                const Icone = ICONES[item.icone];
+                return (
+                  <div key={item.titulo} className="flex gap-5">
+                    <Icone
+                      className="mt-1 h-5 w-5 shrink-0 text-platinumDeep"
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 className="font-display text-lg text-cocoa">{item.titulo}</h3>
+                      <p className="mt-1.5 max-w-prose leading-relaxed text-cocoaSoft">
+                        {item.descricao}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <p className="mt-8 max-w-prose text-sm italic leading-relaxed text-cocoaSoft/80">
+              Não confeccionamos essas peças — cuidamos para que continuem vestindo bem.
+            </p>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Seção 5 — ESCURA. Galeria: o fundo escuro faz as fotos saltarem. */
 export function Galeria() {
   return (
     <section id="galeria" className="bg-ink py-28 text-bone sm:py-36">
@@ -243,7 +288,7 @@ export function Galeria() {
   );
 }
 
-/** Seção 5 — faixa de foto ESCURA, depois processo CLARO. */
+/** Seção 6 — faixa de foto ESCURA, depois processo CLARO. */
 export function Processo() {
   const faixa = useParallax<HTMLDivElement>(0.22);
 
@@ -258,12 +303,12 @@ export function Processo() {
         >
           <Foto
             // FOTO 9 — faixa parallax
-            src="/fotos/faixa-loja.jpg"
+            src="/fotos/faixa-loja.png"
             guia="Foto larga e atmosférica: interior da alfaiataria, arara de ternos, ou a mesa de corte. Serve de respiro entre seções."
             alt="Interior da Alfaiataria Figueiredo, corredor com roupas penduradas"
             aspect="paisagem"
             sizes="100vw"
-            className="h-full w-full !aspect-auto"
+            className="!aspect-auto h-full w-full"
           />
         </div>
         <div className="absolute inset-0 bg-ink/55" aria-hidden="true" />
@@ -284,15 +329,10 @@ export function Processo() {
             {processo.map((etapa, i) => (
               <Reveal key={etapa.numero} delay={i * 80}>
                 <li className="h-full bg-sand p-9">
-                  <span
-                    className="font-display text-5xl text-platinum/60"
-                    aria-hidden="true"
-                  >
+                  <span className="font-display text-5xl text-platinum/60" aria-hidden="true">
                     {etapa.numero}
                   </span>
-                  <h3 className="mt-5 font-display text-xl text-cocoa">
-                    {etapa.titulo}
-                  </h3>
+                  <h3 className="mt-5 font-display text-xl text-cocoa">{etapa.titulo}</h3>
                   <p className="mt-4 text-[15px] leading-relaxed text-cocoaSoft">
                     {etapa.descricao}
                   </p>
@@ -306,35 +346,41 @@ export function Processo() {
   );
 }
 
-/** Seção 6 — CLARA. Depoimentos. */
-export function Depoimentos() {
+/** Seção 7 — CLARA. Avaliações do Google. */
+export function Avaliacoes() {
+  const nota = googleAvaliacoes.nota.toLocaleString('pt-BR', {
+    minimumFractionDigits: 1,
+  });
+
   return (
     <section className="border-t border-sandLine bg-sand py-28 text-cocoa sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <TituloSecao etiqueta="Clientes" titulo="Quem já vestiu." centro />
+          <TituloSecao
+            etiqueta="Clientes"
+            titulo={`Nota ${nota} no Google.`}
+            descricao={`${googleAvaliacoes.total} avaliações de quem já vestiu Alfaiataria Figueiredo.`}
+            centro
+          />
         </Reveal>
 
-        <div className="mt-16 grid gap-4 md:grid-cols-3">
-          {depoimentos.map((dep, i) => (
-            <Reveal key={i} delay={i * 90}>
-              <figure className="flex h-full flex-col border border-sandLine bg-sandDeep p-9">
-                <Quote
-                  className="h-6 w-6 text-platinumDeep"
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
-                <blockquote className="mt-6 flex-1 font-display text-lg leading-relaxed text-cocoa">
-                  {dep.texto}
-                </blockquote>
-                <figcaption className="mt-7 border-t border-sandLine pt-5">
-                  <p className="brand-caps text-[11px] text-cocoa">{dep.autor}</p>
-                  <p className="mt-2 text-sm text-cocoaSoft">{dep.contexto}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="mx-auto mt-10 flex max-w-2xl flex-col items-center gap-8">
+            <div className="flex items-center gap-1" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-6 w-6 fill-platinum text-platinum" strokeWidth={1.5} />
+              ))}
+            </div>
+            <a
+              href={googleAvaliacoes.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brand-caps inline-flex min-h-12 items-center justify-center gap-2.5 border border-sandLine px-7 text-[13px] text-cocoa transition-all duration-200 ease-smooth hover:border-platinumDeep hover:bg-sandDeep active:scale-[0.98]"
+            >
+              Ver avaliações no Google
+            </a>
+          </div>
+        </Reveal>
 
         <Reveal>
           <SectionDivider className="mt-20" tom="claro" />
