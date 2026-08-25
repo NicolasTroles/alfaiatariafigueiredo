@@ -275,7 +275,7 @@ export function Processo() {
             <TituloSecao
               etiqueta="Processo"
               titulo="Do tecido à entrega."
-              descricao="Quatro etapas, sem pressa em nenhuma delas."
+              descricao="Quatro etapas, sem pressa em nenhuma delas. Um trabalho artesanal, conduzido com a eficiência e a excelência de quem tem anos de experiência no ofício."
               centro
             />
           </Reveal>
