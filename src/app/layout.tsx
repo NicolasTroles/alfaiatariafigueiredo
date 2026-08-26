@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
-import { site } from '@/config/site.config';
+import { googleAvaliacoes, site } from '@/config/site.config';
 import './globals.css';
 
 // display: 'swap' evita texto invisível enquanto a fonte carrega.
@@ -51,6 +51,8 @@ export const viewport: Viewport = {
  * Schema.org de negócio local. É o que faz o Google exibir endereço, telefone
  * e horário direto no resultado de busca.
  */
+const redesSociais = [site.redes.instagram, site.redes.facebook].filter(Boolean);
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ClothingStore',
@@ -58,6 +60,8 @@ const jsonLd = {
   description: site.seo.descricao,
   telephone: site.telefone,
   url: site.seo.url,
+  image: `${site.seo.url}/fotos/hero.jpg`,
+  logo: `${site.seo.url}/logo-figueiredo.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.endereco.logradouro,
@@ -80,6 +84,12 @@ const jsonLd = {
       closes: '13:00',
     },
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: googleAvaliacoes.nota,
+    reviewCount: googleAvaliacoes.total,
+  },
+  ...(redesSociais.length > 0 && { sameAs: redesSociais }),
 };
 
 export default function RootLayout({

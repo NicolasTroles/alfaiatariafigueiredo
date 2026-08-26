@@ -50,7 +50,7 @@ export const site = {
     titulo: 'Alfaiataria Figueiredo | Trajes sob medida e uniformes em Pinhais',
     descricao:
       'Alfaiataria Figueiredo, em Pineville, Pinhais/PR. Trajes sociais, uniformes empresariais, camisetas, polos, jaquetas e reformas em geral. Agende pelo WhatsApp.',
-    url: 'https://alfaiataria-figueiredo.vercel.app', // CONFIRMAR domínio final
+    url: 'https://alfaiatariafigueiredo.com.br',
   },
 } as const;
 
