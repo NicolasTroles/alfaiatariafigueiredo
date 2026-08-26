@@ -229,19 +229,20 @@ export function Galeria() {
           <TituloSecao
             etiqueta="Trabalhos"
             titulo="Peças que saíram daqui."
-            descricao="Fotos importadas do site da Figueiredo, usadas de exemplo até termos um ensaio próprio das peças."
+            descricao="Uma seleção do que já foi feito aqui: uniformes de equipe, blazers sob medida e o ateliê no dia a dia."
             tom="escuro"
           />
         </Reveal>
 
-        {/* Grade assimétrica: mais interessante que uma grade uniforme. */}
+        {/* Grade assimétrica: mais interessante que uma grade uniforme.
+            2 linhas só (mesma altura de antes) — destaque vertical + 4 quadros. */}
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Reveal className="lg:row-span-2">
             <Foto
               // FOTO 4 — destaque
-              src="/fotos/galeria-destaque.jpg"
+              src="/fotos/galeria/galeria-3.jpeg"
               guia="DESTAQUE vertical: peça completa, corpo inteiro, em pé. A melhor foto que você tiver."
-              alt="Blazers sob medida em manequins, na Alfaiataria Figueiredo"
+              alt="Alfaiate da Figueiredo tirando medidas de um cliente já vestindo o terno, no ateliê"
               aspect="alto"
               className="h-full"
             />
@@ -249,36 +250,36 @@ export function Galeria() {
           <Reveal delay={80}>
             <Foto
               // FOTO 5
-              src="/fotos/galeria-jaqueta.jpg"
-              guia="Detalhe de jaqueta ou uniforme personalizado."
-              alt="Jaquetas personalizadas penduradas no ateliê da Alfaiataria Figueiredo"
+              src="/fotos/galeria/galeria-5.jpg"
+              guia="Detalhe de blazer ou jaqueta."
+              alt="Blazer social sob medida em tecido listrado, na Alfaiataria Figueiredo"
               aspect="quadrado"
             />
           </Reveal>
           <Reveal delay={160}>
             <Foto
               // FOTO 6
-              src="/fotos/galeria-medidas.jpg"
-              guia="Tirada de medidas: detalhe das mãos e da fita métrica."
-              alt="Detalhe da tirada de medidas de um cliente na Alfaiataria Figueiredo"
+              src="/fotos/galeria/galeria-6.jpg"
+              guia="Detalhe de blazer feminino."
+              alt="Blazer feminino sob medida em verde-oliva, na Alfaiataria Figueiredo"
               aspect="quadrado"
             />
           </Reveal>
           <Reveal delay={240}>
             <Foto
               // FOTO 7
-              src="/fotos/galeria-uniformes.jpg"
-              guia="Uniformes para equipes, em lote."
-              alt="Jaquetas de uniforme empresarial produzidas pela Alfaiataria Figueiredo"
+              src="/fotos/galeria/galeria-1.jpg"
+              guia="Uniforme em uso, ou o ateliê no dia a dia."
+              alt="Jaqueta de uniforme personalizada para a Pontual Calhas, no corredor da Alfaiataria Figueiredo"
               aspect="paisagem"
             />
           </Reveal>
           <Reveal delay={320}>
             <Foto
               // FOTO 8
-              src="/fotos/galeria-social.jpg"
-              guia="Trajes sociais prontos, em manequim ou cabide."
-              alt="Blazers sociais sob medida da Alfaiataria Figueiredo"
+              src="/fotos/galeria/galeria-4.jpg"
+              guia="Detalhe de moletom ou uniforme de equipe."
+              alt="Moletom personalizado bordado para a equipe Vida e Saúde, feito pela Alfaiataria Figueiredo"
               aspect="paisagem"
             />
           </Reveal>
