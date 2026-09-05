@@ -53,6 +53,22 @@ export function Footer() {
             {site.endereco.cidade}/{site.endereco.estado}
           </p>
         </div>
+
+        <div className="mt-6 border-t border-line pt-6 text-center text-[12px] text-muted md:text-left">
+          <p>
+            Desenvolvido por Nicolas Troles —{' '}
+            <a
+              href={`https://wa.me/5541999447746?text=${encodeURIComponent(
+                `Olá! Vi seu contato no site da ${site.marcaLoja} e gostaria de saber mais sobre desenvolvimento de sites.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-bone"
+            >
+              entrar em contato
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
