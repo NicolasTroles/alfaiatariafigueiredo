@@ -1,5 +1,8 @@
+'use client';
+
 import { Phone } from 'lucide-react';
 import { site, whatsappUrl } from '@/config/site.config';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 /**
  * Botões de contato. Todos com altura mínima de 48px (min-h-12) para atender
@@ -30,6 +33,7 @@ export function BotaoWhatsApp({ className }: { className?: string }) {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick('botao_principal')}
       className={`${BASE} bg-platinum text-ink hover:bg-platinumDeep hover:text-bone active:scale-[0.98] ${className ?? ''}`}
     >
       <IconeWhatsApp className="h-4 w-4" />
@@ -72,6 +76,7 @@ export function BotaoWhatsAppFlutuante() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
+      onClick={() => trackWhatsAppClick('botao_flutuante')}
       className="fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 ease-smooth hover:bg-[#20BD5A] hover:scale-105 active:scale-95 md:flex"
     >
       <IconeWhatsApp className="h-6 w-6" />
@@ -95,6 +100,7 @@ export function BarraContatoMobile() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('barra_mobile')}
           className="flex min-h-12 flex-1 items-center justify-center gap-2 bg-platinum text-[12px] brand-caps text-ink active:scale-[0.98]"
         >
           <IconeWhatsApp className="h-4 w-4" />

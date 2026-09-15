@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { whatsappUrl } from '@/config/site.config';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 const LINKS = [
   { href: '#oficio', label: 'O ofício' },
@@ -72,6 +73,7 @@ export function Header() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('header_agendar_prova')}
           className="hidden min-h-11 items-center bg-platinum px-6 brand-caps text-[11px] text-ink transition-colors duration-200 hover:bg-platinumDeep hover:text-bone lg:inline-flex"
         >
           Agendar prova
